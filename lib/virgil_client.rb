@@ -1,10 +1,10 @@
-require 'metadb_gem_map'
+require 'virgil_gem_map'
 require 'yaml'
 require 'rbconfig'
 
-module MetaDB
+module Virgil
   class Client
-    METADB_CONFIG_FILE = File.expand_path("~/.metadb.yaml")
+    VIRGIL_CONFIG_FILE = File.expand_path("~/.virgil.yaml")
     
     RUBY_PLATFORM_MATCHER = { 
       /darwin/  => 'osx',
@@ -24,10 +24,10 @@ module MetaDB
     attr_reader :gem_map
     attr_reader :config
 
-    def initialize(driver = MetaDB::Client::File.new, gem_map = MetaDB::GemMap.new)
+    def initialize(driver = Virgil::Client::File.new, gem_map = Virgil::GemMap.new)
       @driver = driver
       @gem_map = gem_map
-      @config = File.exist?(METADB_CONFIG_FILE) ? YAML.load_file(METADB_CONFIG_FILE) : nil
+      @config = File.exist?(VIRGIL_CONFIG_FILE) ? YAML.load_file(VIRGIL_CONFIG_FILE) : nil
     end
 
     def lookup(os, pm, cname)
@@ -103,10 +103,9 @@ module MetaDB
   end
 
   class Client::File
-
     attr_reader :map
 
-    def initialize(file = File.join(File.dirname(File.expand_path(__FILE__)), 'metadb.yaml'))
+    def initialize(file = File.join(File.dirname(File.expand_path(__FILE__)), 'virgil.yaml'))
       @map = YAML.load_file(file)
     end
 

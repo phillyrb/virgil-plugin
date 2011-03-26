@@ -1,6 +1,6 @@
 require 'yaml'
 
-module MetaDB
+module Virgil 
   class GemMap
     attr_reader :mapping
 

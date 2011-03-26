@@ -1,6 +1,6 @@
 require 'metadb_client'
 
-class Gem::Commands::MetaDBLookupCommand < Gem::Command
+class Gem::Commands::VirgilLookupCommand < Gem::Command
 
   VERSION = "0.0.1"
   
@@ -29,9 +29,6 @@ class Gem::Commands::MetaDBLookupCommand < Gem::Command
         show_help
         terminate_interaction 1
       end
-    
-       
-
     end
   end
 end
