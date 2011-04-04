@@ -1,8 +1,8 @@
-.autotest
 History.txt
 Manifest.txt
 README.txt
 Rakefile
-bin/metadb_plugin
-lib/metadb_plugin.rb
-test/test_metadb_plugin.rb
+lib/rubygems/commands/virgil_lookup.rb
+lib/rubygems_plugin.rb
+lib/virgil_client.rb
+lib/virgil_gem_map.rb
